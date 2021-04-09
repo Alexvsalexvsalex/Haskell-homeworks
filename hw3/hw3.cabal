@@ -1,0 +1,54 @@
+name:                hw3
+version:             0.1.0.0
+synopsis:            Synopsis for task 3
+description:         Task 3 for FP ITMO course
+
+homepage:            https://github.com/fp-ctd-itmo/hw3-Alexvsalexvsalex
+license:             MIT
+license-file:        LICENSE
+author:              Alexey Shishkin
+maintainer:          dr.alexa2000@mail.ru
+copyright:           2020 Alexey Shishkin
+
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+tested-with:         GHC == 8.0.1
+
+library
+  exposed-modules:     Lib
+  hs-source-dirs:      src
+  ghc-options:         -Wall
+  build-depends:       base >=4.7 && <5
+               ,       mtl
+               ,       directory
+               ,       optparse-applicative
+               ,       transformers
+               ,       filepath
+  default-language:    Haskell2010
+
+executable hw3
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -Wall
+  build-depends:       base >= 4.9 && < 5
+               ,       mtl
+               ,       directory
+               ,       optparse-applicative
+               ,       transformers
+               ,       filepath
+               ,       hw3
+  default-language:    Haskell2010
+
+
+test-suite unit-tests
+  type:                exitcode-stdio-1.0
+  main-is:             HW3Spec.hs
+  other-modules:       MockTestsSpec
+  hs-source-dirs:      test
+  build-depends:       base
+               ,       mtl
+               ,       hspec
+               ,       hw3
+  default-language:    Haskell2010
